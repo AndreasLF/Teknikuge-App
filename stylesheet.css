@@ -1,0 +1,305 @@
+/*Styles the body*/
+#body{
+    background-color: #2196F3;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    
+    /*Makes sure the user cannot select text on the screen to avoid selection when holding down buttons*/
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/*Button that makes the robot go forward*/
+#forwardButton {
+    margin: auto;
+}
+
+/*Button that makes the robot go backward*/
+#backwardButton {
+    margin: auto;
+}
+
+/*Button that makes the robot turn left*/
+#leftButton {
+    float: left;
+}
+
+/*Button that makes the robot turn right*/
+#rightButton {
+}
+
+/*div containing the robot control buttons*/
+#controllerDiv {
+    margin-top: 20px;
+}
+
+/*Button increasing robot speed*/
+#increaseButton {
+    display: inline-block;
+}
+
+/*Button decreasing robot speed*/
+#decreaseButton {
+    display: inline-block;
+}
+
+/*Displays the speed on screen*/
+#speedCounterDiv {
+    color: #FFFFFF;
+    font-family: 'roboto';
+    font-size: 16px;
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+}
+
+/*Div containing speed controls*/
+#speedController {
+    height: 48px;
+    margin-top: 40px;
+    
+}
+
+#changeStateDiv{
+    margin-top: 20px;
+}
+
+#changeStateButton{
+    width: 134px;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #607D8B;
+    height: 48px;
+    border-radius: 50px;
+    box-shadow: 0px 3px 17px -1px rgba(0, 0, 0, 0.15);
+}
+
+
+#missileController {
+}
+
+#fireMissileButton {
+    height: 48px;
+    margin-top: 40px;
+}
+
+/*styles the buttons*/
+.button{
+    color: #FFFFFF;
+    background-color: #607D8B;
+    height: 48px;
+    width: 48px;
+    border-radius: 50px;
+    box-shadow: 0px 3px 17px -1px rgba(0, 0, 0, 0.15);
+}
+
+/*Div on top containing menu buttons*/
+#menuBar {
+    top: 0;
+    left: 0;
+    position: relative;
+    height: 48px;
+    width: 100%;
+    background-color: #1976D2;
+    box-shadow: 0px 3px 17px -1px rgba(0, 0, 0, 0.2);
+    color: #FFFFFF;
+}
+
+/*Button opening the menu*/
+#menuButton {
+    color: #FFFFFF;
+}
+
+/*buttons opening menus (menu button and theme menu button)*/
+.menuButtons {
+    display: inline-block;
+    height: 48px;
+    width: 48px;
+}
+
+/*styles the menu icon*/
+#menuIcon {
+    /*transition*/
+   -webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+     transition-duration: 1s;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+     transition-property: transform;
+}
+
+/*styles menu icon on hover*/
+#menuIcon:hover{
+    /*rotates the icon on hover*/
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+     transform: rotate(45deg);
+}
+
+/*styles the palette icon*/
+#paletteIcon {
+    /*transition*/
+    -webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+     transition-duration: 1s;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+     transition-property: transform;
+}
+
+/*styles palette icons on hover*/
+#paletteIcon:hover {
+    /*rotates the icon on hover*/
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+     transform: rotate(45deg);
+}
+
+/*styles the theme menu*/
+#themeMenu {
+    height: 0px;
+    transition: 1s;
+    background-color: #FFFFFF;
+}
+
+/*styles the theme buttons*/
+.themeButton {
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    margin: 3px 4px 3px 6px;
+    width: 12%;
+    text-transform: uppercase;
+    border-radius: 100px;
+    box-shadow: 0px 3px 17px -1px rgba(0, 0, 0, 0.15);
+}
+
+/*styles blue theme button*/
+#blueThemeButton {
+    background-color: #2196F3;
+}
+
+/*orange theme button*/
+#orangeThemeButton {
+    background-color: #FF9800;
+}
+
+/*Indigo theme button*/
+#indigoThemeButton {
+    background-color: #3F51B5;
+}
+
+/*purple theme button*/
+#purpleThemeButton {
+    background-color: #673AB7;
+}
+
+/*green theme button*/
+#greenThemeButton {
+    background-color: #4CAF50;    
+}
+
+/*teal theme button*/
+#tealThemeButton {
+    background-color: #009688;    
+}
+
+/*styles left menu*/
+#leftMenu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1; 
+    top: 0;
+    left: 0;
+    background-color: #FFFFFF;
+    overflow-x: hidden; 
+    transition: 1s; 
+}
+
+/*styles close menu button*/
+#closeMenu{
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    float: right;
+    
+    /*transiton*/
+    -webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+     transition-duration: 1s;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+     transition-property: transform;
+}
+
+/*styles close menu on hover*/
+#closeMenu:hover {
+    /*makes the closemenu icon rotate on hover*/
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+     transform: rotate(45deg);
+}
+
+/*styles content div*/
+#content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 0.5;
+    transition: 1s;
+}
+
+/*mac addres changer div*/
+#macAddressChangerDiv {
+    margin: 48px auto 5px auto;
+}
+
+/*styles the left menu buttons*/
+.leftMenuButton {
+    background-color: #607D8B;
+    box-shadow: 0px 3px 17px -1px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    height: 48px;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: 'roboto';
+    font-size: 16px;        
+    border-radius: 40px;
+    margin: 10px auto 5px auto;
+    transition: 0.3s;
+    display: block;
+}
+
+/*styles message div*/
+#message {
+    color: #FFFFFF;
+    font-family: 'roboto';
+    font-size: 16px;
+}
+
+/*styles status message div*/
+#statusDiv {
+    color: #FFFFFF;
+    font-family: 'roboto';
+    font-size: 16px;
+}

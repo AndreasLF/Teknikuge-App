@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+   <!-- <script type="text/javascript" src="cordova.js"></script>-->
+    <script type="text/javascript" src="js/javascript.js"></script>
+    <title>Robot Controller</title>
+</head>
+
+<body id="body" onload="onLoad()">
+
+    <div id="themeMenu">
+        <div id="blueThemeButton" onclick="changeTheme(blueTheme)" class="themeButton"></div>
+        <div id="orangeThemeButton" onclick="changeTheme(orangeTheme)" class="themeButton"></div>
+        <div id="indigoThemeButton" onclick="changeTheme(indigoTheme)" class="themeButton"></div>
+        <div id="purpleThemeButton" onclick="changeTheme(purpleTheme)" class="themeButton"></div>
+        <div id="greenThemeButton" onclick="changeTheme(greenTheme)" class="themeButton"></div>
+        <div id="tealThemeButton" onclick="changeTheme(tealTheme)" class="themeButton"></div>
+    </div>
+
+    <div id="leftMenu">
+        <div id="closeMenu" onclick="openMenu()"><i class="material-icons" style="font-size: 48px; display: block;">close</i></div>
+
+        <div class="leftMenuButton" id="macAddressChangerDiv" onclick="changeMacAddress()"></div>
+        <div class="leftMenuButton"></div>
+        <div class="leftMenuButton"></div>
+        <div class="leftMenuButton"></div>
+
+
+    </div>
+
+    <div id="content">
+    </div>
+
+    <div id="menuBar">
+        <div id="menuButton" class="menuButtons" onclick="openMenu()">
+            <i id="menuIcon" class="material-icons" style="font-size: 36px; margin-top: 6px; margin-left: 6px;">menu</i>
+        </div>
+        <div id="themeButton" class="menuButtons" onclick="openThemeMenu()">
+            <i id="paletteIcon" class="material-icons" style="font-size: 36px;">palette</i>
+        </div>
+    </div>
+
+
+
+    <div id="messageDiv"></div>
+    <div id="statusDiv"></div>
+
+    <div id="changeStateDiv">
+        <div id="changeStateButton"><i class="material-icons" style="font-size: 48px;">directions_car</i></div>
+    </div>
+
+    
+    <div id="controllerDiv">
+        <div id="forwardButton" class="button"><i class="material-icons" style="font-size: 48px;">keyboard_arrow_up</i></div>
+        <div id="leftButton" class="button"><i class="material-icons" style="font-size: 48px;">keyboard_arrow_left</i></div>
+        <div id="rightButton" class="button"><i class="material-icons" style="font-size: 48px;">keyboard_arrow_right</i></div>
+        <div id="backwardButton" class="button"><i class="material-icons" style="font-size: 48px;">keyboard_arrow_down</i></div>
+    </div>
+
+    <div id="speedController">
+        <div id="decreaseButton" class="button"><i class="material-icons" style="font-size: 48px;">remove_circle_outline</i></div>
+
+        <div id="speedCounterDiv">10 %</div>
+
+        <div id="increaseButton" class="button"><i class="material-icons" style="font-size: 48px;">add_circle_outline</i></div>
+    </div>
+    
+    <div id="missileController">
+        <div id="fireMissileButton" class="button"><i class="material-icons" style="font-size: 48px;">gps_fixed</i></div>
+    </div>
+
+
+</body>
+
+</html>
