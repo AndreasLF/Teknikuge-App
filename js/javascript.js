@@ -1,5 +1,5 @@
 var macAddress = "00:06:66:8E:23:C9"; //BLuetooth Mate mac adress, pasword 1234
-var forwardButton, backwardButton, rightButton, leftButton, increaseButton, decreaseButton, speedCounterDiv; //Declaration of variables containing html elements
+var forwardButton, backwardButton, rightButton, leftButton, increaseButton, decreaseButton, speedCounterDiv, fireMissileButton, changeStateButton; //Declaration of variables containing html elements
 var speed = 115; //Robot default speed
 var themeButtonClicked = false; //variable containing information on whether or not the theme button is clicked
 var menuButtonClicked = false; //variable containing information on whether or not the menu button is clicked
@@ -116,9 +116,9 @@ function onDeviceReady() {
  */
 function onConnect() {
     alert("connected"); //Alerts user when connected
+    statusDiv.innerHTML = "Connected to " + macAddress + "."; //Displays the mac address when connected       		
     bluetoothSerial.clear(success, failure);
     bluetoothSerial.subscribe("\n", onMessage, subscribeFailed); //subscribes to bluetooth
-    statusDiv.innerHTML = "Connected to " + macAddress + "."; //Displays the mac address when connected       		
 }
 
 /*
@@ -158,7 +158,7 @@ function onDisconnect() {
  * Makes the robot drive forward
  */
 function moveForward() {
-    sendToArduino("a"); //The character 'a' is sent to Arduino, which makes it move forward
+    sendToArduino('a'); //The character 'a' is sent to Arduino, which makes it move forward
     forwardButton.style.color = "rgba(255, 255, 255, 0.5)"; //Button icon color is changed
     forwardButton.style.boxShadow = "0px 3px 17px -1px rgba(0, 0, 0, 0.3)"; //Button shadow is changed
 }
@@ -167,7 +167,7 @@ function moveForward() {
  * Makes the robot reverse
  */
 function moveBackward() {
-    sendToArduino("b"); //The character 'b' is sent to Arduino, which makes it move backward
+    sendToArduino('b'); //The character 'b' is sent to Arduino, which makes it move backward
     backwardButton.style.color = "rgba(255, 255, 255, 0.5)"; //Button icon color is changed
     backwardButton.style.boxShadow = "0px 3px 17px -1px rgba(0, 0, 0, 0.3)"; //Button shadow is changed
 }
@@ -177,7 +177,7 @@ function moveBackward() {
  * Makes the robot turn right
  */
 function moveRight() {
-    sendToArduino("r"); //The character 'r' is sent to Arduino, which makes it turn right
+    sendToArduino('r'); //The character 'r' is sent to Arduino, which makes it turn right
     rightButton.style.color = "rgba(255, 255, 255, 0.5)"; //Button icon color is changed
     rightButton.style.boxShadow = "0px 3px 17px -1px rgba(0, 0, 0, 0.3)"; //Button shadow is changed
 }
@@ -186,7 +186,7 @@ function moveRight() {
  * Makes the robot turn left
  */
 function moveLeft() {
-    sendToArduino("l"); //The character 'l' is sent to Arduino, which makes it left right
+    sendToArduino('l'); //The character 'l' is sent to Arduino, which makes it left right
     leftButton.style.color = "rgba(255, 255, 255, 0.5)"; //Button icon color is changed
     leftButton.style.boxShadow = "0px 3px 17px -1px rgba(0, 0, 0, 0.3)"; //Button shadow is changed
 }
@@ -195,7 +195,7 @@ function moveLeft() {
  * Stops the robot. Executed on touchend
  */
 function stopMove() {
-    sendToArduino("s"); //The character 's' is sent to Arduino, which makes it stop
+    sendToArduino('s'); //The character 's' is sent to Arduino, which makes it stop
     setButtonStyleDefault(); //Changes the button style back to default
 }
 
@@ -205,7 +205,7 @@ function stopMove() {
 function increaseSpeed() {
     /*The speed will only increase if it is below the maximum*/
     if (speed < 250) {
-        sendToArduino("+"); //The character 'i' is sent to Arduino, which increases the speed
+        sendToArduino('+'); //The character 'i' is sent to Arduino, which increases the speed
         speed = speed + 15; //Increses speed by 15
         var s = (speed - 100) / 1.5; //Converts the speed increase to percentage
         speedCounterDiv.innerHTML = s + " %"; //Shows the percentage
@@ -223,7 +223,7 @@ function decreaseSpeed() {
 
     /*The speed will only decrease if it is above the minimum*/
     if (speed > 100) {
-        sendToArduino("-"); //The character 'd' is sent to Arduino, which decreases the speeed 
+        sendToArduino('-'); //The character 'd' is sent to Arduino, which decreases the speeed 
         speed = speed - 15; //Decreases the speed by 15
         var s = (speed - 100) / 1.5; //Converts the speed increase to percentage
         speedCounterDiv.innerHTML = s + " %"; //Shows the percentage
@@ -238,15 +238,14 @@ function decreaseSpeed() {
 
 
 function fireMissile() {
+    sendToArduino('f'); 
     fireMissileButton.style.color = "rgba(255, 255, 255, 0.5)"; //Button icon color is changed
-    fireMissileButton.style.boxShadow = "0px 3px 17px -1px rgba(0, 0, 0, 0.3)"; //Button shadow is changed
-    sendToArduino("f"); 
-    
+    fireMissileButton.style.boxShadow = "0px 3px 17px -1px rgba(0, 0, 0, 0.3)"; //Button shadow is changed    
 }
 
 function changeState() {
     
-    sendToArduino("c");
+    sendToArduino('c');
     
     if(automaticDriveState == false){
         
@@ -255,8 +254,6 @@ function changeState() {
         automaticDriveState = true;
        }
     else{
-        
-        setButtonStyleDefault();
         automaticDriveState = false;
     }
     
